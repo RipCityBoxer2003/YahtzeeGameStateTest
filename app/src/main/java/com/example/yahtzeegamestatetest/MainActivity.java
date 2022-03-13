@@ -28,6 +28,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
+
         ui.setText("");
+
+        YahtzeeGameState firstInstance = new YahtzeeGameState(2);
+        YahtzeeGameState firstCopy = new YahtzeeGameState(firstInstance);
+
+        firstCopy.setRound(1);
+        firstCopy.setTurn(0);
+        firstCopy.setScores(0,1, 10);
+
+        ui.setText(firstInstance.toString());
     }
 }

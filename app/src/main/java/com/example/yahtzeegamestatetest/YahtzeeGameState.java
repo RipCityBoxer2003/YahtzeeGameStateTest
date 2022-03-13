@@ -11,7 +11,7 @@ package com.example.yahtzeegamestatetest;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
-import edu.up.cs301.game.infoMsg.GameState;
+//import edu.up.cs301.game.infoMsg.GameState;
 
 public class YahtzeeGameState extends GameState {
     // is the player of the current turn's id
