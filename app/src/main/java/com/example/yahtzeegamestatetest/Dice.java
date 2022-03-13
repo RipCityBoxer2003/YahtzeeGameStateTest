@@ -1,4 +1,4 @@
-package edu.up.cs301.pig;
+package com.example.yahtzeegamestatetest;
 
 public class Dice {
     private int val;

@@ -1,4 +1,4 @@
-package edu.up.cs301.pig;
+package com.example.yahtzeegamestatetest;
 
 /**
  * class Yahtzee Game State is the game state with all of the variables in yahtzee
