@@ -19,7 +19,7 @@ public class YahtzeeGameState extends GameState {
     // 2d array to score scores [the player id of the person in question][the value when looking at the score sheet from top to bottom]
     private int[][] scores;
     // an array of the dice values in play
-    private Dice diceArray[];
+    private Dice[] diceArray;
     // current turn's roll number
     private int rollNum;
     //current round of play
@@ -55,15 +55,17 @@ public class YahtzeeGameState extends GameState {
     public YahtzeeGameState (YahtzeeGameState g) {
         this.turn = g.turn;
         this.rollNum = g.rollNum;
-        for( int i = 0; i < scores.length; i++ ){
-            for(int j = 0; j < scores[i].length; j++){
+        this.scores = new int[g.scores.length][g.scores[0].length];
+        this.diceArray = new Dice[g.diceArray.length];
+        for( int i = 0; i < g.scores.length; i++ ){
+            for(int j = 0; j < g.scores[i].length; j++){
                 this.scores[i][j] = g.scores[i][j];
             }
         }
-        for(int i = 0; i < diceArray.length; i++){
+        for(int i = 0; i < g.diceArray.length; i++){
             this.diceArray[i] = new Dice(g.diceArray[i]);
         }
-        for(int i =0; i < selected.size();i++){
+        for(int i =0; i < g.selected.size();i++){
             this.selected.add(new Dice(g.diceArray[i]));
         }
         //this.scoreCard = new ScoreCard();
@@ -118,12 +120,7 @@ public class YahtzeeGameState extends GameState {
 
     //swaps the "keep" value of the dice (setter)
     public void swapKeepValue(Dice d,boolean Keep){
-        if(d.isKeep()){
-            d.setKeep(false);
-        }
-        else {
-            d.setKeep(false);
-        }
+        d.setKeep(false);
     }
 
 
