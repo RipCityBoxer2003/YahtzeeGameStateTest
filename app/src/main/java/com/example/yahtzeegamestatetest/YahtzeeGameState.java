@@ -148,7 +148,7 @@ public class YahtzeeGameState extends GameState {
         for(int i = 0; i < scores.length; i++){
             playerValues.concat("player" + i + " scores: ");
             for(int j = 0; j < scores[i].length; j++){
-                playerValues.concat(scores[j] + ", ");
+                playerValues.concat(scores[i][j] + ", ");
             }
         }
         for(int i = 0; i < diceArray.length; i++){
