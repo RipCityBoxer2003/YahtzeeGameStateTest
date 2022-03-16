@@ -36,7 +36,9 @@ public class YahtzeeGameState extends GameState {
         this.turn = 0;
         this.scores = new int[numPlayers][13];
         this.diceArray= new Dice[5];
-
+        for(int i = 0; i < 3; i++){
+            this.selected.add(null);
+        }
         //Do I need this for loop to instantiate dice?
         for(int i = 0; i < diceArray.length; i++){
             this.diceArray[i] = new Dice();
@@ -77,7 +79,7 @@ public class YahtzeeGameState extends GameState {
 
 
     //getter methods for YahtzeeGameState
-    //todo getter methods for yahtzee
+
 //returns current player id
     public int getTurn() {
         return turn;
@@ -90,7 +92,7 @@ public class YahtzeeGameState extends GameState {
     public Dice getDice(int idx) {
         return diceArray[idx];
     }
-    public Dice[] getDiceArray(){return diceArray;}
+    //public Dice[] getDiceArray(){return diceArray;}
 //returns number of rolls during the turn
     public int getRollNum() {
         return rollNum;
@@ -99,7 +101,7 @@ public class YahtzeeGameState extends GameState {
     public int getRound() {
         return round;
     }
-    public ArrayList<Dice> getSelectedDice(){return selected;}
+    //public ArrayList<Dice> getSelectedDice(){return selected;}
 
 
     //setter methods for YahtzeeGameState
@@ -141,30 +143,30 @@ public class YahtzeeGameState extends GameState {
     @Override
     public String toString() {
         //initializes empty strings for later return
-        String playerValues = "";
-        String diceValues = "";
-        String selectedValues = "";
+        String playerValues = " ";
+        String diceValues = " ";
+        String selectedValues = " ";
         //writes out all values in arrays to a given string
         for(int i = 0; i < scores.length; i++){
-            playerValues.concat("player" + i + " scores: ");
+           playerValues =  playerValues.concat("player " + i + " scores: ");
             for(int j = 0; j < scores[i].length; j++){
-                playerValues.concat(scores[i][j] + ", ");
+               playerValues =  playerValues.concat(scores[i][j] + ", ");
             }
         }
         for(int i = 0; i < diceArray.length; i++){
-            diceValues.concat("dice " + i + "'s value is: " + diceArray[i].getVal());
+           diceValues = diceValues.concat("dice " + i + "'s value is: " + diceArray[i].getVal());
         }
         for(int i =0; i < selected.size(); i++){
-            selectedValues.concat("Selected dice: " + i + "'s value is: " + selected.get(i).getVal());
+          selectedValues = selectedValues.concat("Selected dice: " + i + "'s value is: " + selected.get(i).getVal() + " ");
         }
         //returns values with given variable values and new strings above
         return "YahtzeeGameState{" +
-                "Turn=" + turn + "\n" +
-                playerValues + "\n" +
-               diceValues + "\n" +
-                selectedValues + "\n" +
-                ", rollNum=" + rollNum + "\n" +
-                ", round=" + round +
+                "Turn = " + turn + "\n" +
+                playerValues + " \n" +
+               diceValues + " \n" +
+                selectedValues + " \n" +
+                " rollNum = " + rollNum + "\n" +
+                " round = " + round +
                 '}';
     }
 }

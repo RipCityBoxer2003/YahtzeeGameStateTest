@@ -9,11 +9,13 @@
 
     <EditText
         android:id="@+id/user_input"
-        android:lines="5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="5"
-        android:inputType="text" />
+        android:inputType="textMultiLine"
+        android:lineSpacingExtra="8sp"
+        android:lines="100"
+        android:singleLine="false" />
 
     <Button
         android:id="@+id/runTest"

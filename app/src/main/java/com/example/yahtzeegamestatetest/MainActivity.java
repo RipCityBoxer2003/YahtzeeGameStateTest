@@ -34,10 +34,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         YahtzeeGameState firstInstance = new YahtzeeGameState(2);
         YahtzeeGameState firstCopy = new YahtzeeGameState(firstInstance);
 
-        firstCopy.setRound(1);
-        firstCopy.setTurn(0);
-        firstCopy.setScores(0,1, 10);
+        firstInstance.setRound(5);
+        ui.setText(ui.getText().append("Round number set to " + firstInstance.getRound() + "\n"));
+        firstInstance.setTurn(1);
+        ui.setText(ui.getText().append("turn number set to " + firstInstance.getTurn() + "\n"));
+        firstInstance.setScores(0,1, 10);
+        int[] player0Scores = firstInstance.getScores(0);
+        ui.setText(ui.getText().append("Score of row 1 player 0 number set to " + player0Scores[1] + "\n"));
+        firstInstance.setSelected(firstInstance.getDice(3),0);
+        ui.setText(ui.getText().append("set the dice in added dice 3 to selected arraylist\n"));
+        firstInstance.setDiceVal(firstInstance.getDice(3),5);
+        ui.setText(ui.getText().append("set Dice at idx 3 to 5\n"));
+        firstInstance.swapKeepValue(firstInstance.getDice(3),true);
+        ui.setText(ui.getText().append("swapped dice at idx 3 to keep\n"));
+        firstInstance.setRollNum(5);
+        ui.setText(ui.getText().append("roll number set to " + firstInstance.getRollNum() + "\n"));
 
-        ui.setText(firstInstance.toString());
+        YahtzeeGameState secondInstance = new YahtzeeGameState(2);
+        YahtzeeGameState secondCopy = new YahtzeeGameState(secondInstance);
+
+        ui.setText(ui.getText().append( firstCopy.equals(secondCopy) +"\n"));
+        ui.setText(ui.getText().append(firstCopy + "\n"));
+        ui.setText(ui.getText().append(secondCopy + "\n"));
+        ;
     }
 }
