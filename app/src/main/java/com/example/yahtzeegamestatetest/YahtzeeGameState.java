@@ -5,7 +5,7 @@ package com.example.yahtzeegamestatetest;
  *
  * @author Andrew M. Nuxoll, modified by Steven R. Vegdahl, Augustine P, Reyn H, James L, Santiago F
  *
- * @version February 2016
+ * @version March 2016
  */
 
 import java.lang.reflect.Array;

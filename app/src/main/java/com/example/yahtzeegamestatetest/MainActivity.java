@@ -1,5 +1,10 @@
 package com.example.yahtzeegamestatetest;
-
+/**
+ * class Main Activity for testing purposes
+ *
+ * @author Augustine Pham James Lulay Reyn Hasimoto Santiago Franco
+ * @version March 2022
+ */
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -8,7 +13,14 @@ import android.widget.Button;
 import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-
+    /**
+     External Citation
+     Date: 15 March 2022
+     Problem: could not do multiline
+     Resource:
+     https://stackoverflow.com/questions/20474321/enter-key-starting-a-new-line-in-edittext-instead-of-submitting-the-text-androi
+     Solution: I used the example code from this post.
+     */
     private boolean testRun;
     EditText ui;
 
@@ -53,7 +65,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         YahtzeeGameState secondInstance = new YahtzeeGameState(2);
         YahtzeeGameState secondCopy = new YahtzeeGameState(secondInstance);
 
-        ui.setText(ui.getText().append( firstCopy.equals(secondCopy) +"\n"));
+        ui.setText(ui.getText().append( firstCopy.toString().equals(secondCopy.toString()) +"\n"));
         ui.setText(ui.getText().append(firstCopy + "\n"));
         ui.setText(ui.getText().append(secondCopy + "\n"));
         ;
